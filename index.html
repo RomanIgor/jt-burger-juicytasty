@@ -3,20 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AutoElite Berlin — Flottenfahrzeuge kaufen & verkaufen</title>
-<meta name="description" content="Geprüfte Flottenfahrzeuge in Berlin — fair kaufen oder verkaufen. Unabhängiges Wertgutachten, HEK-Garantie, schnelle Abwicklung für Firmen und Privatkunden.">
+<title>AutoElite Berlin — Flottenfahrzeuge kaufen &amp; verkaufen</title>
+<meta name="description" content="Flottenfahrzeuge in Berlin kaufen oder fair verkaufen. HEK-Preisgarantie, unabhängiges Wertgutachten, 24h Antwort. Kein Callcenter — ein echter Ansprechpartner.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#bestand" onclick="closeMobileMenu()">Fahrzeuge</a>
-  <a href="#warum" onclick="closeMobileMenu()">Über uns</a>
-  <a href="#b2b" onclick="closeMobileMenu()">Für Händler</a>
-  <a href="#kontakt" onclick="closeMobileMenu()">Kontakt</a>
+  <a href="#kaufen"   onclick="closeMobileMenu()">Kaufen</a>
+  <a href="#verkaufen" onclick="closeMobileMenu()">Verkaufen</a>
+  <a href="#warum"    onclick="closeMobileMenu()">Über uns</a>
+  <a href="#b2b"      onclick="closeMobileMenu()">Für Händler</a>
+  <a href="#kontakt"  onclick="closeMobileMenu()">Kontakt</a>
   <button class="m-cta" onclick="closeMobileMenu();scrollToKontakt()">Jetzt anfragen</button>
 </div>
 
@@ -24,25 +25,25 @@
 <nav id="navbar">
   <div class="nav-logo">Auto<span>Elite</span></div>
   <ul class="nav-links">
-    <li><a href="#bestand">Fahrzeuge</a></li>
+    <li><a href="#kaufen">Kaufen</a></li>
+    <li><a href="#verkaufen">Verkaufen</a></li>
     <li><a href="#warum">Über uns</a></li>
     <li><a href="#b2b">Für Händler</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
   <div class="nav-right">
     <div class="nav-tel">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.22 1.18 2 2 0 012.22 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
       +49 30 123 456 78
     </div>
-    <!-- THEME TOGGLE -->
-    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Theme wechseln">
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Theme">
       <span class="theme-icon-dark">🌙</span>
       <span class="theme-icon-light">☀️</span>
     </button>
     <button class="btn-nav" onclick="scrollToKontakt()">Anfragen</button>
   </div>
   <div style="display:flex;align-items:center;gap:12px">
-    <button class="theme-toggle theme-toggle-mobile" id="themeToggleMobile" onclick="toggleTheme()" aria-label="Theme wechseln">
+    <button class="theme-toggle theme-toggle-mobile" onclick="toggleTheme()" aria-label="Theme">
       <span class="theme-icon-dark">🌙</span>
       <span class="theme-icon-light">☀️</span>
     </button>
@@ -52,17 +53,27 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ══ HERO ══ -->
 <section class="hero" id="top">
-  <div class="hero-bg"></div>
-  <div class="hero-pattern"></div>
+  <div class="hero-bg-num">AE</div>
   <div class="hero-left">
-    <div class="hero-badge"><div class="hero-badge-dot"></div>Flottenankauf &amp; Fahrzeugverkauf — Berlin</div>
-    <h1 class="hero-h1">Flottenfahrzeuge<br>kaufen oder<br><em>fair verkaufen.</em></h1>
-    <p class="hero-sub">Geprüfte Firmenfahrzeuge mit lückenloser Servicehistorie — direkt aus Unternehmensflotten. Für Privatkäufer, Händler und Firmen, die verkaufen möchten.</p>
-    <div class="hero-btns">
-      <button class="btn-primary" onclick="document.getElementById('bestand').scrollIntoView({behavior:'smooth'})">Fahrzeuge kaufen →</button>
-      <button class="btn-outline" onclick="document.getElementById('b2b').scrollIntoView({behavior:'smooth'})">Fahrzeug verkaufen</button>
+    <div class="hero-badge"><div class="hero-badge-dot"></div>Berlin · Flottenankauf &amp; Fahrzeugverkauf seit 2015</div>
+    <h1 class="hero-h1">Kein Callcenter.<br>Ein Ansprechpartner.</h1>
+    <span class="hero-h1-em">Berlin.</span>
+    <p class="hero-sub">Flottenfahrzeuge fair kaufen oder verkaufen — mit unabhängigem Wertgutachten, HEK-Preisgarantie und einer Antwort in 24h. Persönlich, transparent, zuverlässig.</p>
+    <div class="hero-dual-cta">
+      <div class="cta-card" onclick="document.getElementById('kaufen').scrollIntoView({behavior:'smooth'})">
+        <div class="cta-card-icon">🚗</div>
+        <div class="cta-card-title">Ich möchte kaufen</div>
+        <div class="cta-card-desc">Geprüfte Flottenfahrzeuge zu fairen Marktpreisen</div>
+        <div class="cta-card-arrow">→</div>
+      </div>
+      <div class="cta-card" onclick="document.getElementById('verkaufen').scrollIntoView({behavior:'smooth'})">
+        <div class="cta-card-icon">💶</div>
+        <div class="cta-card-title">Ich möchte verkaufen</div>
+        <div class="cta-card-desc">Sofortbewertung + HEK-Garantie für Ihr Fahrzeug</div>
+        <div class="cta-card-arrow">→</div>
+      </div>
     </div>
     <div class="hero-trust">
       <div class="trust-avatars">
@@ -70,32 +81,214 @@
       </div>
       <div class="trust-text">
         <strong>★★★★★ 4.9/5 Bewertung</strong>
-        Über 320 zufriedene Kunden &amp; Partner in Berlin
+        Über 320 zufriedene Kunden &amp; Unternehmenspartner
       </div>
     </div>
   </div>
   <div class="hero-right">
     <img class="hero-img-main" id="heroImg"
-      src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1200&q=85&fit=crop"
-      alt="Premium BMW" onload="this.classList.add('loaded')">
+      src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=1400&q=90&fit=crop"
+      alt="Flottenfahrzeug Berlin" onload="this.classList.add('loaded')">
     <div class="hero-overlay"></div>
+    <div class="hero-live-card">
+      <div class="hero-live-dot"></div>
+      <div>
+        <div class="hero-live-title">Heute bewertet</div>
+        <div class="hero-live-num" id="liveCounter">4</div>
+        <div class="hero-live-sub">Fahrzeuge · Berlin</div>
+      </div>
+    </div>
     <div class="hero-car-info">
-      <div class="car-name">BMW 5er M Sport</div>
+      <div class="car-name">BMW 5er M Sport · Flottenrückläufer</div>
       <div class="car-price">52.900 €</div>
       <div class="car-km">28.000 km · 2022 · Diesel</div>
     </div>
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-item"><div class="trust-icon">🏢</div><div><div class="trust-label">Herkunft</div><div class="trust-value">Nur Flottenfahrzeuge</div></div></div>
-  <div class="trust-item"><div class="trust-icon">🛡️</div><div><div class="trust-label">Garantie</div><div class="trust-value">12 Monate inkl.</div></div></div>
-  <div class="trust-item"><div class="trust-icon">📋</div><div><div class="trust-label">Transparent</div><div class="trust-value">Unabh. Wertgutachten</div></div></div>
-  <div class="trust-item"><div class="trust-icon">🤝</div><div><div class="trust-label">Finanzierung</div><div class="trust-value">Ab 0% möglich</div></div></div>
+<!-- ══ DIFF BAR ══ -->
+<div class="diff-bar">
+  <div class="diff-item reveal d1"><div class="diff-icon">🏢</div><div><div class="diff-label">Herkunft</div><div class="diff-value">Nur Flottenrückläufer</div></div></div>
+  <div class="diff-item reveal d2"><div class="diff-icon">📋</div><div><div class="diff-label">Gutachten</div><div class="diff-value">Unabhängig &amp; verbindlich</div></div></div>
+  <div class="diff-item reveal d3"><div class="diff-icon">🏆</div><div><div class="diff-label">Preisgarantie</div><div class="diff-value">Mindestens HEK-Wert</div></div></div>
+  <div class="diff-item reveal d4"><div class="diff-icon">⚡</div><div><div class="diff-label">Reaktionszeit</div><div class="diff-value">Antwort in 24h</div></div></div>
+  <div class="diff-item reveal"><div class="diff-icon">👤</div><div><div class="diff-label">Service</div><div class="diff-value">Echter Ansprechpartner</div></div></div>
 </div>
 
-<!-- SEARCH -->
+<!-- ══ ESTIMATOR / VERKAUFEN ══ -->
+<section class="estimator-section" id="verkaufen">
+  <div class="estimator-inner">
+    <div>
+      <div class="tag">Sofortbewertung</div>
+      <h2 class="section-h2">Was ist Ihr<br>Fahrzeug <em>wert?</em></h2>
+      <p class="section-p">Preisorientierung in Sekunden — kostenlos, unverbindlich und ohne Anmeldung. Unser Team bestätigt anschließend den verbindlichen HEK-Wert.</p>
+      <div class="estimator-promise">
+        <div class="promise-item"><span class="promise-check">✓</span> Kein Anmelden, keine E-Mail nötig</div>
+        <div class="promise-item"><span class="promise-check">✓</span> Sofortanzeige des Preiskorridors</div>
+        <div class="promise-item"><span class="promise-check">✓</span> Verbindliches Angebot in 24h</div>
+        <div class="promise-item"><span class="promise-check">✓</span> HEK-Garantie — wir zahlen mindestens den Gutachtenwert</div>
+      </div>
+      <div class="vs-box">
+        <div class="vs-title">AutoElite vs. große Plattformen</div>
+        <div class="vs-grid">
+          <div class="vs-col-head" style="text-align:left"></div>
+          <div class="vs-col-head">AutoElite</div>
+          <div class="vs-col-head vs-them">Andere</div>
+          <div class="vs-feature">Preis ändert sich nach Bewertung</div><div class="vs-cell vs-yes">Nie — HEK-Garantie</div><div class="vs-cell vs-no">Oft</div>
+          <div class="vs-feature">Echter Ansprechpartner</div><div class="vs-cell vs-yes">Immer</div><div class="vs-cell vs-no">Callcenter</div>
+          <div class="vs-feature">Abholung durch uns</div><div class="vs-cell vs-yes">Inklusive</div><div class="vs-cell vs-no">Filiale nötig</div>
+          <div class="vs-feature">Flottenankauf (mehrere Autos)</div><div class="vs-cell vs-yes">Spezialisiert</div><div class="vs-cell vs-no">Begrenzt</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CALCULATOR -->
+    <div>
+      <div class="calc-wrap">
+        <div class="calc-header">
+          <div class="calc-icon">⚡</div>
+          <div>
+            <div class="calc-title">Fahrzeugbewertung — sofort</div>
+            <div class="calc-sub">Ihr Preiskorridor in 30 Sekunden</div>
+          </div>
+        </div>
+        <div class="calc-body">
+          <div id="calcStep1">
+            <div class="calc-step-label">Schritt 1 von 3 — Fahrzeugdaten</div>
+            <div class="form-row" style="margin-bottom:14px">
+              <div class="form-group">
+                <label class="form-label">Marke</label>
+                <select class="form-select" id="calcMarke">
+                  <option value="">— wählen —</option>
+                  <option value="premium">BMW</option><option value="premium">Mercedes</option>
+                  <option value="premium">Audi</option><option value="premium">Porsche</option>
+                  <option value="mid">Volkswagen</option><option value="mid">Skoda</option>
+                  <option value="mid">Ford</option><option value="mid">Opel</option>
+                  <option value="mid">Andere</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Baujahr</label>
+                <select class="form-select" id="calcJahr">
+                  <option value="">— wählen —</option>
+                  <option value="4">2024</option><option value="4">2023</option>
+                  <option value="3">2022</option><option value="3">2021</option>
+                  <option value="2">2020</option><option value="2">2019</option>
+                  <option value="1">2018</option><option value="0">vor 2018</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Kilometerstand</label>
+                <select class="form-select" id="calcKm">
+                  <option value="">— wählen —</option>
+                  <option value="5">unter 10.000 km</option>
+                  <option value="4">10.000 – 30.000 km</option>
+                  <option value="3">30.000 – 60.000 km</option>
+                  <option value="2">60.000 – 100.000 km</option>
+                  <option value="1">über 100.000 km</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Kraftstoff</label>
+                <select class="form-select" id="calcKraft">
+                  <option value="">— wählen —</option>
+                  <option value="1.1">Elektro</option>
+                  <option value="1.05">Hybrid</option>
+                  <option value="1.0">Benzin</option>
+                  <option value="0.95">Diesel</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn-primary calc-btn" onclick="calcStep2()">Weiter →</button>
+          </div>
+
+          <div id="calcStep2" style="display:none">
+            <div class="calc-step-label">Schritt 2 von 3 — Fahrzeugzustand</div>
+            <div class="form-group" style="margin-bottom:18px">
+              <label class="form-label" style="margin-bottom:10px;display:block">Allgemeiner Zustand</label>
+              <div class="condition-grid">
+                <div class="cond-btn" onclick="selectCondition(this,'1.1')"><div class="cond-icon">⭐</div><div class="cond-label">Sehr gut</div><div class="cond-desc">Kaum Spuren</div></div>
+                <div class="cond-btn" onclick="selectCondition(this,'1.0')"><div class="cond-icon">👍</div><div class="cond-label">Gut</div><div class="cond-desc">Normal</div></div>
+                <div class="cond-btn" onclick="selectCondition(this,'0.85')"><div class="cond-icon">🔧</div><div class="cond-label">Akzeptabel</div><div class="cond-desc">Mängel</div></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" style="margin-bottom:10px;display:block">Servicehistorie</label>
+              <div class="radio-row">
+                <label class="radio-opt"><input type="radio" name="service" value="1.05"> Vollständig (Scheckheft)</label>
+                <label class="radio-opt"><input type="radio" name="service" value="1.0" checked> Teilweise</label>
+                <label class="radio-opt"><input type="radio" name="service" value="0.92"> Nicht vorhanden</label>
+              </div>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:18px">
+              <button class="btn-outline" onclick="calcBack()">← Zurück</button>
+              <button class="btn-primary" style="flex:1;justify-content:center" onclick="calcStep3()">Preis anzeigen →</button>
+            </div>
+          </div>
+
+          <div id="calcStep3" style="display:none">
+            <div class="calc-step-label">Schritt 3 von 3 — Ihr Preiskorridor</div>
+            <div class="price-result" style="margin-bottom:18px">
+              <div class="price-result-label">Geschätzter Ankaufspreis</div>
+              <div class="price-result-range" id="priceRange">— €</div>
+              <div class="price-result-note">Basierend auf Marktdaten · Verbindlich nach Gutachten</div>
+              <div class="price-hek-note">🏆 Wir zahlen mindestens den HEK-Wert</div>
+            </div>
+            <div class="form-row" style="margin-bottom:14px">
+              <div class="form-group"><label class="form-label">Ihr Name</label><input type="text" class="form-input" id="calcVorname" placeholder="Max Mustermann"></div>
+              <div class="form-group"><label class="form-label">Telefon</label><input type="tel" class="form-input" id="calcTel" placeholder="+49 1xx xxxxxxx"></div>
+            </div>
+            <button class="btn-primary calc-btn" onclick="submitCalc()">Verbindliches Angebot anfordern →</button>
+            <p class="form-note" style="margin-top:12px">🔒 Kostenlos &amp; unverbindlich — Anruf innerhalb von 24h</p>
+            <button class="calc-restart" onclick="restartCalc()">← Neue Bewertung starten</button>
+          </div>
+        </div>
+        <div class="calc-progress"><div class="calc-progress-bar" id="calcProgressBar" style="width:33%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ══ -->
+<section class="process-section">
+  <div class="process-inner">
+    <div style="text-align:center;max-width:580px;margin:0 auto 64px">
+      <div class="tag" style="justify-content:center;margin-bottom:14px">So einfach geht's</div>
+      <h2 class="section-h2" style="text-align:center">Von der Anfrage bis zum<br><em>Geld auf dem Konto.</em></h2>
+      <p class="section-p" style="text-align:center">Kein Kleingedrucktes, keine versteckten Schritte — 3 bis 5 Werktage von Anfrage bis Zahlung.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal"><div class="ps-num">01</div><div class="ps-icon">📋</div><div class="ps-title">Anfrage &amp; Bestätigung</div><div class="ps-desc">Fahrzeugdaten senden — wir bestätigen schriftlich und organisieren die Abholung durch unseren Logistikpartner.</div><div class="ps-time">⏱ Tag 1</div></div>
+      <div class="process-connector">→</div>
+      <div class="process-step reveal d1"><div class="ps-num">02</div><div class="ps-icon">🔍</div><div class="ps-title">Unabhängiges Gutachten</div><div class="ps-desc">Zertifizierter Gutachter bewertet neutral. Sie erhalten HEK, HVK &amp; Reparaturwert — vollständig transparent.</div><div class="ps-time">⏱ Tag 2–3</div></div>
+      <div class="process-connector">→</div>
+      <div class="process-step reveal d2"><div class="ps-num">03</div><div class="ps-icon">💶</div><div class="ps-title">Preismitteilung</div><div class="ps-desc">Mindestens HEK, ggf. mit Marktbonus. Sie stellen uns einfach eine Rechnung — keine Verhandlung nötig.</div><div class="ps-time">⏱ Tag 3–4</div></div>
+      <div class="process-connector">→</div>
+      <div class="process-step reveal d3"><div class="ps-num">04</div><div class="ps-icon">✅</div><div class="ps-title">Zahlung &amp; Abschluss</div><div class="ps-desc">Umgehende Überweisung nach Freigabe. Kein Warten, kein Nachverhandeln — der vereinbarte Preis ist fix.</div><div class="ps-time">⏱ Tag 4–5</div></div>
+    </div>
+    <div class="process-cta">
+      <button class="btn-primary" onclick="document.getElementById('verkaufen').scrollIntoView({behavior:'smooth'})">Jetzt Fahrzeug bewerten lassen →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ KAUFEN / LISTINGS ══ -->
+<div class="section-header-buy" id="kaufen">
+  <div style="display:grid;grid-template-columns:1fr auto;gap:48px;align-items:flex-start;flex-wrap:wrap">
+    <div>
+      <div class="tag" style="margin-bottom:12px">Aktuelle Fahrzeuge</div>
+      <h2 class="section-h2">Geprüfte Flottenfahrzeuge —<br><em>direkt verfügbar.</em></h2>
+      <p class="section-p" style="max-width:520px">Alle Fahrzeuge aus Unternehmensflotten mit lückenloser Servicehistorie. Kein Privatverkauf, kein versteckter Schaden.</p>
+    </div>
+    <div class="buy-stats-row" style="flex-direction:column;margin-top:28px">
+      <div class="buy-stat"><div class="buy-stat-ic">🚗</div><div><div class="buy-stat-val" id="carCountNum">6</div><div class="buy-stat-lbl">Fahrzeuge verfügbar</div></div></div>
+      <div class="buy-stat"><div class="buy-stat-ic">🏢</div><div><div class="buy-stat-val">100%</div><div class="buy-stat-lbl">Flottenrückläufer</div></div></div>
+    </div>
+  </div>
+</div>
+
 <div class="search-section" id="bestand">
   <div class="search-box">
     <div class="filter-col"><label>Marke</label><select id="fMarke"><option value="">Alle Marken</option><option>BMW</option><option>Mercedes</option><option>Audi</option><option>Porsche</option><option>Volkswagen</option></select></div>
@@ -104,121 +297,83 @@
     <div class="filter-col"><label>Kraftstoff</label><select id="fKraft"><option value="">Alle</option><option>Benzin</option><option>Diesel</option><option>Hybrid</option><option>Elektro</option></select></div>
     <div class="filter-col"><label>Getriebe</label><select id="fGetriebe"><option value="">Alle</option><option>Automatik</option><option>Schaltgetriebe</option></select></div>
     <button class="btn-search" onclick="doFilter()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Suchen
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>Suchen
     </button>
   </div>
 </div>
-<div class="results-info"><div class="results-count"><strong id="carCountNum">6</strong> Fahrzeuge verfügbar</div></div>
+<div class="results-info"><div class="results-count"><strong id="carCountDisplay">6</strong> Fahrzeuge verfügbar</div></div>
 <div class="listings"><div class="cars-grid" id="carsGrid"></div></div>
 
-<!-- WHY US -->
+<!-- ══ WHY US ══ -->
 <section class="why-section" id="warum">
   <div class="why-inner">
-    <div class="why-left">
+    <div>
       <div class="tag">Warum AutoElite</div>
       <h2 class="section-h2">Faire Preise.<br><em>Klare Herkunft.</em></h2>
-      <p class="section-p">Unsere Fahrzeuge kommen ausschließlich aus Unternehmensflotten — keine Privatfahrzeuge, kein versteckter Mangel. Jedes Fahrzeug wird unabhängig bewertet, bevor es angeboten wird.</p>
+      <p class="section-p">Alle Fahrzeuge kommen aus Unternehmensflotten — keine Privatfahrzeuge, keine unbekannte Geschichte. Jedes Fahrzeug wird von einem unabhängigen Gutachter bewertet.</p>
       <div class="why-steps">
-        <div class="why-step"><div class="step-num">01</div><div><div class="step-title">Nur geprüfte Flottenrückläufer</div><div class="step-desc">Alle Fahrzeuge stammen aus Firmenflotten — mit nachweisbarer Nutzungshistorie, regelmäßiger Wartung und dokumentiertem Zustand.</div></div></div>
-        <div class="why-step"><div class="step-num">02</div><div><div class="step-title">Unabhängiges Wertgutachten</div><div class="step-desc">Jedes Fahrzeug wird von einem unabhängigen Gutachter bewertet — der Preis basiert auf HEK-Wert, nicht auf Verhandlung.</div></div></div>
-        <div class="why-step"><div class="step-num">03</div><div><div class="step-title">Faire Preise für alle Seiten</div><div class="step-desc">Verkäufer erhalten garantiert den HEK-Wert. Käufer zahlen faire Marktpreise — direkt, ohne Händleraufschlag.</div></div></div>
+        <div class="why-step reveal"><div class="step-num">01</div><div><div class="step-title">Nur geprüfte Flottenrückläufer</div><div class="step-desc">Regelmäßige Wartung, lückenlose Servicehistorie, professionelle Nutzung — Standard bei jedem Fahrzeug in unserem Bestand.</div></div></div>
+        <div class="why-step reveal d1"><div class="step-num">02</div><div><div class="step-title">Unabhängiges Wertgutachten</div><div class="step-desc">Jedes Fahrzeug wird neutral bewertet. Der Preis basiert auf dem HEK-Wert — nicht auf Verhandlung. Für Käufer und Verkäufer fair.</div></div></div>
+        <div class="why-step reveal d2"><div class="step-num">03</div><div><div class="step-title">Persönlich &amp; lokal in Berlin</div><div class="step-desc">Kein Callcenter, keine anonyme Plattform. Ein Mensch antwortet — innerhalb von 24h verbindlich.</div></div></div>
       </div>
     </div>
     <div class="why-right">
-      <div class="why-card"><div class="why-icon">⭐</div><div class="why-card-num">4.9/5</div><div class="why-card-title">Google-Bewertung</div><div class="why-card-text">Über 320 verifizierte Kundenbewertungen sprechen für sich.</div></div>
-      <div class="why-card"><div class="why-icon">🚗</div><div class="why-card-num">500+</div><div class="why-card-title">Fahrzeuge verkauft</div><div class="why-card-text">Seit 2015 vermitteln wir Flottenfahrzeuge zwischen Unternehmen, Händlern und Privatkunden.</div></div>
-      <div class="why-card"><div class="why-icon">💰</div><div class="why-card-num">0%</div><div class="why-card-title">Finanzierung ab 0%</div><div class="why-card-text">Direkt aus Flotte — keine Händlermarge, faire Preise für Käufer und Verkäufer.</div></div>
-      <div class="why-card"><div class="why-icon">📞</div><div class="why-card-num">24h</div><div class="why-card-title">Antwortgarantie</div><div class="why-card-text">Ihre Anfrage wird innerhalb von 24 Stunden beantwortet.</div></div>
+      <div class="why-card reveal"><div class="why-icon">⭐</div><div class="why-card-num">4.9/5</div><div class="why-card-title">Google-Bewertung</div><div class="why-card-text">Über 320 verifizierte Bewertungen von Käufern und Unternehmenspartnern in Berlin.</div></div>
+      <div class="why-card reveal d1"><div class="why-icon">🚗</div><div class="why-card-num">500+</div><div class="why-card-title">Fahrzeuge vermittelt</div><div class="why-card-text">Seit 2015 verbinden wir Unternehmen, Händler und Privatkunden in Berlin und Umgebung.</div></div>
+      <div class="why-card reveal d2"><div class="why-icon">🏆</div><div class="why-card-num">HEK</div><div class="why-card-title">Preisgarantie</div><div class="why-card-text">Wir zahlen mindestens den Gutachtenwert — anders als viele Mitbewerber.</div></div>
+      <div class="why-card reveal d3"><div class="why-icon">⚡</div><div class="why-card-num">24h</div><div class="why-card-title">Antwortgarantie</div><div class="why-card-text">Jede Anfrage wird innerhalb eines Werktages persönlich beantwortet.</div></div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- ══ TESTIMONIALS ══ -->
 <section class="testimonials">
-  <div class="tag">Kundenstimmen</div>
+  <div class="tag" style="margin-bottom:14px">Kundenstimmen</div>
   <h2 class="section-h2">Was unsere <em>Kunden sagen</em></h2>
   <div class="testi-grid">
-    <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Absolut professionelle Abwicklung. Der BMW war genau wie beschrieben — vollständige Servicehistorie, top Zustand. Ich werde definitiv wiederkommen.</p><div class="testi-author"><div class="testi-avatar">👨</div><div><div class="testi-name">Markus K.</div><div class="testi-car">BMW 5er 530d</div></div></div></div>
-    <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Sehr ehrliche Beratung ohne Druck. Man merkt, dass hier Qualität vor Quantität geht. Der Porsche war in makellosem Zustand. Sehr empfehlenswert!</p><div class="testi-author"><div class="testi-avatar">👩</div><div><div class="testi-name">Sandra M.</div><div class="testi-car">Porsche Macan GTS</div></div></div></div>
-    <div class="testi-card"><div class="testi-quote">"</div><div class="testi-stars">★★★★★</div><p class="testi-text">Wir haben 8 Leasingrückläufer auf einmal abgegeben. Innerhalb von 24h hatten wir ein konkretes Angebot, der Prozess war vollständig transparent. Genau das braucht ein Fuhrparkleiter.</p><div class="testi-author"><div class="testi-avatar">👨‍💼</div><div><div class="testi-name">Thomas B.</div><div class="testi-car">Fuhrparkleiter · 8 Fahrzeuge</div></div></div></div>
+    <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-text">Der BMW war genauso wie beschrieben — vollständige Servicehistorie, direkt aus einer Firmenflotte. Der Preis war fair, der Prozess transparent. Kein Verhandlungsstress.</p><div class="testi-author"><div class="testi-avatar">👨</div><div><div class="testi-name">Markus K.</div><div class="testi-car">Privatkäufer · BMW 5er 530d</div></div></div></div>
+    <div class="testi-card reveal d1"><div class="testi-stars">★★★★★</div><p class="testi-text">Wir haben 8 Leasingrückläufer abgegeben. Innerhalb von 24h hatten wir ein konkretes Angebot, der Prozess war vollständig transparent. Genau das braucht ein Fuhrparkleiter.</p><div class="testi-author"><div class="testi-avatar">👨‍💼</div><div><div class="testi-name">Thomas B.</div><div class="testi-car">Fuhrparkleiter · 8 Fahrzeuge</div></div></div></div>
+    <div class="testi-card reveal d2"><div class="testi-stars">★★★★★</div><p class="testi-text">Bei anderen Plattformen hat sich der Preis nach der Besichtigung geändert. Hier nicht — der zugesagte HEK-Wert wurde eingehalten. Das ist ein echter Unterschied.</p><div class="testi-author"><div class="testi-avatar">👩</div><div><div class="testi-name">Sandra M.</div><div class="testi-car">Unternehmerin · Porsche Macan GTS</div></div></div></div>
   </div>
 </section>
 
-<!-- B2B SECTION -->
+<!-- ══ B2B ══ -->
 <section class="b2b-section" id="b2b">
-
-  <!-- HEK GUARANTEE BANNER -->
   <div class="b2b-hek-banner">
     <div class="b2b-hek-inner">
       <div class="b2b-hek-badge">🏆 HEK-Garantie</div>
-      <div class="b2b-hek-text">
-        <strong>Wir garantieren Ihnen stets mindestens den Händlereinkaufswert (HEK)</strong> laut unabhängigem Wertgutachten — plus optionalem Bonus bei marktgängigen Fahrzeugen.
-      </div>
+      <div class="b2b-hek-text"><strong>Wir garantieren mindestens den Händlereinkaufswert (HEK)</strong> laut unabhängigem Wertgutachten — plus optionalem Bonus bei marktgängigen Fahrzeugen.</div>
       <a href="#b2b-form" class="b2b-hek-btn">Jetzt Bewertung anfragen</a>
     </div>
   </div>
-
   <div class="b2b-inner">
-    <div class="b2b-left">
-      <div class="tag">Für Unternehmen & Händler</div>
+    <div>
+      <div class="tag">Für Unternehmen &amp; Händler</div>
       <h2 class="section-h2">Sie haben Fahrzeuge<br>zu <em>verkaufen?</em></h2>
       <p class="section-p">Wir arbeiten mit Leasinggesellschaften, Fuhrparkbetreibern, Autohäusern und Privatunternehmen zusammen. Schnelle Bewertung, transparente Abwicklung, faire Konditionen.</p>
       <div class="b2b-benefits">
-        <div class="b2b-benefit"><div class="b2b-benefit-icon">⚡</div><div><div class="b2b-benefit-title">Schnelle Bewertung — 24h</div><div class="b2b-benefit-desc">Innerhalb von 24h erhalten Sie ein verbindliches Angebot auf Basis eines unabhängigen Wertgutachtens.</div></div></div>
-        <div class="b2b-benefit"><div class="b2b-benefit-icon">🏆</div><div><div class="b2b-benefit-title">HEK-Garantie + Bonus möglich</div><div class="b2b-benefit-desc">Wir zahlen mindestens den Händlereinkaufswert (HEK). Bei marktgängigen Modellen gewähren wir zusätzlich einen Bonus — transparent und klar ausgewiesen.</div></div></div>
-        <div class="b2b-benefit"><div class="b2b-benefit-icon">📦</div><div><div class="b2b-benefit-title">Flottenankauf ab 1 Fahrzeug</div><div class="b2b-benefit-desc">Einzelfahrzeug oder ganze Flotte — wir übernehmen von 1 bis 50+ Fahrzeuge. Abholung durch unseren Logistikpartner inklusive.</div></div></div>
-        <div class="b2b-benefit"><div class="b2b-benefit-icon">🏦</div><div><div class="b2b-benefit-title">Sofortige Zahlung nach Rechnung</div><div class="b2b-benefit-desc">Nach Gutachten und Preiseinigung stellen Sie uns einfach eine Rechnung — Zahlung erfolgt umgehend nach Freigabe.</div></div></div>
+        <div class="b2b-benefit"><div class="b2b-benefit-icon">⚡</div><div><div class="b2b-benefit-title">Schnelle Bewertung — 24h</div><div class="b2b-benefit-desc">Verbindliches Angebot auf Basis eines unabhängigen Wertgutachtens innerhalb von 24h.</div></div></div>
+        <div class="b2b-benefit"><div class="b2b-benefit-icon">🏆</div><div><div class="b2b-benefit-title">HEK-Garantie + Bonus möglich</div><div class="b2b-benefit-desc">Wir zahlen mindestens den HEK. Bei marktgängigen Modellen gewähren wir zusätzlich einen Bonus — transparent ausgewiesen.</div></div></div>
+        <div class="b2b-benefit"><div class="b2b-benefit-icon">📦</div><div><div class="b2b-benefit-title">Flottenankauf ab 1 Fahrzeug</div><div class="b2b-benefit-desc">Einzelfahrzeug oder ganze Flotte — 1 bis 50+ Fahrzeuge. Abholung durch unseren Logistikpartner inklusive.</div></div></div>
+        <div class="b2b-benefit"><div class="b2b-benefit-icon">🏦</div><div><div class="b2b-benefit-title">Sofortige Zahlung nach Rechnung</div><div class="b2b-benefit-desc">Nach Preiseinigung stellen Sie uns eine Rechnung — Überweisung erfolgt umgehend nach Freigabe.</div></div></div>
       </div>
-
-      <!-- GLOSSAR -->
       <div class="b2b-glossar">
         <div class="b2b-glossar-title"><span>📊</span> Wertgutachten — was bedeutet was?</div>
         <div class="b2b-glossar-grid">
-          <div class="b2b-glossar-item">
-            <div class="b2b-glossar-kuerzel">HEK</div>
-            <div class="b2b-glossar-name">Händlereinkaufswert</div>
-            <div class="b2b-glossar-desc">Ihr <strong>garantierter Mindest-Ankaufspreis</strong> — wir zahlen immer mindestens diesen Wert.</div>
-          </div>
-          <div class="b2b-glossar-item">
-            <div class="b2b-glossar-kuerzel">HVK</div>
-            <div class="b2b-glossar-name">Händlerverkaufswert</div>
-            <div class="b2b-glossar-desc">Marktüblicher Wiederverkaufspreis — Basis für unsere Marktanalyse und Bonus-Ermittlung.</div>
-          </div>
-          <div class="b2b-glossar-item">
-            <div class="b2b-glossar-kuerzel">REP</div>
-            <div class="b2b-glossar-name">Reparaturwert</div>
-            <div class="b2b-glossar-desc">Geschätzte Kosten für festgestellte Mängel — fließt transparent in die Preisermittlung ein.</div>
-          </div>
-          <div class="b2b-glossar-item">
-            <div class="b2b-glossar-kuerzel">ÜDV</div>
-            <div class="b2b-glossar-name">Übergabedokumentenwert</div>
-            <div class="b2b-glossar-desc">Dokumentierter Fahrzeugzustand bei der Übernahme — Ihre rechtliche Absicherung.</div>
-          </div>
+          <div class="b2b-glossar-item"><div class="b2b-glossar-kuerzel">HEK</div><div class="b2b-glossar-name">Händlereinkaufswert</div><div class="b2b-glossar-desc">Ihr <strong>garantierter Mindest-Ankaufspreis</strong> — wir zahlen immer mindestens diesen Wert.</div></div>
+          <div class="b2b-glossar-item"><div class="b2b-glossar-kuerzel">HVK</div><div class="b2b-glossar-name">Händlerverkaufswert</div><div class="b2b-glossar-desc">Marktüblicher Wiederverkaufspreis — Basis für unsere Bonus-Ermittlung.</div></div>
+          <div class="b2b-glossar-item"><div class="b2b-glossar-kuerzel">REP</div><div class="b2b-glossar-name">Reparaturwert</div><div class="b2b-glossar-desc">Geschätzte Mängelkosten — fließt transparent in die Preisermittlung ein.</div></div>
+          <div class="b2b-glossar-item"><div class="b2b-glossar-kuerzel">ÜDV</div><div class="b2b-glossar-name">Übergabedokumentenwert</div><div class="b2b-glossar-desc">Dokumentierter Zustand bei Übernahme — Ihre rechtliche Absicherung.</div></div>
         </div>
       </div>
-
-      <!-- STANDGEBÜHREN -->
       <div class="b2b-standgebuehr">
-        <div class="b2b-stand-row b2b-stand-ok">
-          <span class="b2b-stand-icon">✅</span>
-          <div><strong>Tag 1–5 nach Zahlungseingang:</strong> Kostenfreie Abholung</div>
-        </div>
-        <div class="b2b-stand-row b2b-stand-warn">
-          <span class="b2b-stand-icon">⚠️</span>
-          <div><strong>Ab Tag 6:</strong> Standgebühr von <strong>20,00 € / Tag</strong></div>
-        </div>
+        <div class="b2b-stand-row b2b-stand-ok"><span class="b2b-stand-icon">✅</span><div><strong>Tag 1–5 nach Zahlungseingang:</strong> Kostenfreie Abholung</div></div>
+        <div class="b2b-stand-row b2b-stand-warn"><span class="b2b-stand-icon">⚠️</span><div><strong>Ab Tag 6:</strong> Standgebühr von <strong>20,00 € / Tag</strong></div></div>
       </div>
-
     </div>
-    <div class="b2b-right" id="b2b-form">
+    <div id="b2b-form">
       <div class="b2b-form-wrap">
-        <div class="b2b-form-header">
-          <div class="b2b-form-icon">🏢</div>
-          <div>
-            <div class="b2b-form-title">Kostenlose Fahrzeugbewertung</div>
-            <div class="b2b-form-sub">Für Unternehmen & Händler</div>
-          </div>
-        </div>
+        <div class="b2b-form-header"><div class="b2b-form-icon">🏢</div><div><div class="b2b-form-title">Kostenlose Fahrzeugbewertung</div><div class="b2b-form-sub">Für Unternehmen &amp; Händler</div></div></div>
         <form class="b2b-form" id="b2bForm" onsubmit="submitB2B(event)">
           <div class="form-row">
             <div class="form-group"><label class="form-label">Firmenname</label><input type="text" class="form-input" id="b2bFirma" placeholder="Musterfirma GmbH" required></div>
@@ -229,28 +384,25 @@
             <div class="form-group"><label class="form-label">E-Mail</label><input type="email" class="form-input" id="b2bEmail" placeholder="info@firma.de" required></div>
           </div>
           <div class="form-row">
-            <div class="form-group"><label class="form-label">Anzahl Fahrzeuge</label><select class="form-select" id="b2bAnzahl"><option>1–3 Fahrzeuge</option><option>4–10 Fahrzeuge</option><option>11–30 Fahrzeuge</option><option>30+ Fahrzeuge</option></select></div>
+            <div class="form-group"><label class="form-label">Anzahl Fahrzeuge</label><select class="form-select" id="b2bAnzahl"><option>1–3</option><option>4–10</option><option>11–30</option><option>30+</option></select></div>
             <div class="form-group"><label class="form-label">Fahrzeugtypen</label><select class="form-select" id="b2bTyp"><option>PKW</option><option>SUV / Geländewagen</option><option>Transporter / LKW</option><option>Gemischte Flotte</option></select></div>
           </div>
-          <div class="form-group"><label class="form-label">Nachricht / Details</label><textarea class="form-textarea" id="b2bNachricht" placeholder="Marken, Modelle, Baujahre, Zustand — je mehr Details, desto schneller das Angebot..."></textarea></div>
-          <button type="submit" class="form-submit b2b-submit">
-            Kostenlose Bewertung anfordern
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-          <p class="form-note">🔒 Unverbindlich & kostenlos — wir melden uns innerhalb von 24h.</p>
+          <div class="form-group"><label class="form-label">Nachricht / Details</label><textarea class="form-textarea" id="b2bNachricht" placeholder="Marken, Modelle, Baujahre, Zustand..."></textarea></div>
+          <button type="submit" class="form-submit">Kostenlose Bewertung anfordern <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+          <p class="form-note">🔒 Unverbindlich &amp; kostenlos — wir melden uns innerhalb von 24h.</p>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ══ CONTACT ══ -->
 <section class="contact-section" id="kontakt">
   <div class="contact-inner">
-    <div class="contact-info">
+    <div>
       <div class="tag">Kontakt aufnehmen</div>
-      <h2 class="section-h2">Bereit für<br>Ihr <em>Traumauto?</em></h2>
-      <p class="section-p">Unser Team berät Sie kostenlos und unverbindlich. Probefahrten sind jederzeit möglich.</p>
+      <h2 class="section-h2">Bereit für den<br><em>nächsten Schritt?</em></h2>
+      <p class="section-p">Ob kaufen, verkaufen oder Flotte abwickeln — kein Formular das ins Leere geht. Ein Mensch antwortet innerhalb von 24h persönlich.</p>
       <div class="contact-items">
         <div class="contact-item"><div class="c-icon">📞</div><div><div class="c-label">Telefon</div><div class="c-val">+49 30 123 456 78</div></div></div>
         <div class="contact-item"><div class="c-icon">✉️</div><div><div class="c-label">E-Mail</div><div class="c-val">info@autoelite-berlin.de</div></div></div>
@@ -259,32 +411,32 @@
       </div>
     </div>
     <div>
-      <div class="form-title">Jetzt unverbindlich <em style="font-style:italic;color:var(--gold)">anfragen</em></div>
+      <div class="form-title">Jetzt <em style="color:var(--gold);font-style:italic">anfragen</em></div>
       <form class="contact-form" id="contactForm" onsubmit="submitContact(event)">
-        <div class="form-row">
+        <div class="form-row" style="margin-bottom:16px">
           <div class="form-group"><label class="form-label">Vorname</label><input type="text" class="form-input" id="cVorname" placeholder="Max" required></div>
           <div class="form-group"><label class="form-label">Nachname</label><input type="text" class="form-input" id="cNachname" placeholder="Mustermann" required></div>
         </div>
-        <div class="form-row">
+        <div class="form-row" style="margin-bottom:16px">
           <div class="form-group"><label class="form-label">Telefon</label><input type="tel" class="form-input" id="cTel" placeholder="+49 1xx xxxxxxx" required></div>
           <div class="form-group"><label class="form-label">E-Mail</label><input type="email" class="form-input" id="cEmail" placeholder="max@beispiel.de"></div>
         </div>
-        <div class="form-group"><label class="form-label">Fahrzeug von Interesse</label><select class="form-select" id="formVehicle"><option value="">— Fahrzeug auswählen —</option></select></div>
-        <div class="form-group"><label class="form-label">Ihre Nachricht</label><textarea class="form-textarea" id="cNachricht" placeholder="Fragen, gewünschter Termin für Probefahrt..."></textarea></div>
-        <button type="submit" class="form-submit">
-          Anfrage kostenlos absenden
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-        <p class="form-note">🔒 Ihre Daten sind sicher. Wir geben sie nicht weiter.</p>
+        <div class="form-group" style="margin-bottom:16px">
+          <label class="form-label">Anliegen / Fahrzeug</label>
+          <select class="form-select" id="formVehicle"><option value="">— Fahrzeug auswählen —</option></select>
+        </div>
+        <div class="form-group" style="margin-bottom:16px"><label class="form-label">Ihre Nachricht</label><textarea class="form-textarea" id="cNachricht" placeholder="Fragen, Terminwünsch, Details..."></textarea></div>
+        <button type="submit" class="form-submit">Anfrage kostenlos absenden <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+        <p class="form-note" style="margin-top:12px">🔒 Ihre Daten sind sicher. Wir antworten innerhalb von 24h persönlich.</p>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ADMIN -->
+<!-- ══ ADMIN ══ -->
 <section class="admin-section" id="admin">
   <div class="admin-header">
-    <div><div class="tag" style="margin-bottom:8px">Verwaltung</div><h2 class="admin-title">Bestand <em>verwalten</em></h2></div>
+    <div><div class="tag" style="margin-bottom:8px">Verwaltung</div><div class="admin-title">Bestand verwalten</div></div>
     <button class="btn-primary" onclick="toggleAddForm()">+ Fahrzeug hinzufügen</button>
   </div>
   <div class="add-form" id="addForm">
@@ -300,26 +452,32 @@
       <div class="form-group"><label class="form-label">Preis (€)</label><input type="number" class="form-input" id="aPreis" placeholder="35000"></div>
       <div class="form-group"><label class="form-label">Status</label><select class="form-select" id="aStatus"><option>Verfügbar</option><option>Reserviert</option><option>Verkauft</option></select></div>
     </div>
-    <div class="form-group" style="margin-bottom:18px"><label class="form-label">Beschreibung</label><textarea class="form-textarea" id="aDesc" placeholder="Ausstattung, Besonderheiten..."></textarea></div>
+    <div class="form-group" style="margin-bottom:16px"><label class="form-label">Beschreibung</label><textarea class="form-textarea" id="aDesc" placeholder="Ausstattung, Besonderheiten..."></textarea></div>
     <div class="form-group" style="margin-bottom:24px"><label class="form-label">Foto-URL</label><input type="text" class="form-input" id="aImg" placeholder="https://..."></div>
     <div style="display:flex;gap:12px;flex-wrap:wrap">
-      <button class="btn-primary" onclick="addCar()">Speichern</button>
+      <button class="btn-primary" onclick="addCar()">Fahrzeug speichern</button>
       <button class="btn-outline" onclick="toggleAddForm()">Abbrechen</button>
     </div>
   </div>
   <div class="admin-table-wrap">
-    <table>
-      <thead><tr><th>Fahrzeug</th><th>Baujahr</th><th>Kilometerstand</th><th>Kraftstoff</th><th>Preis</th><th>Status</th><th>Aktionen</th></tr></thead>
-      <tbody id="adminBody"></tbody>
-    </table>
+    <table><thead><tr><th>Fahrzeug</th><th>Baujahr</th><th>Kilometer</th><th>Kraftstoff</th><th>Preis</th><th>Status</th><th>Aktionen</th></tr></thead>
+    <tbody id="adminBody"></tbody></table>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ══ FOOTER ══ -->
 <footer>
   <div class="footer-top">
-    <div class="footer-brand"><div class="logo">Auto<span>Elite</span></div><p>Ihr Partner für Flottenfahrzeuge in Berlin — fair kaufen, fair verkaufen. Wir verbinden Unternehmen, Händler und Privatkunden seit 2015.</p></div>
-    <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#bestand">Fahrzeuge</a></li><li><a href="#warum">Über uns</a></li><li><a href="#b2b">Für Händler</a></li><li><a href="#kontakt">Kontakt</a></li></ul></div>
+    <div class="footer-brand">
+      <div class="logo">Auto<span>Elite</span></div>
+      <p>Ihr Partner für Flottenfahrzeuge in Berlin — fair kaufen, fair verkaufen. Wir verbinden Unternehmen, Händler und Privatkunden seit 2015.</p>
+      <div class="footer-badges">
+        <span class="footer-badge">🏆 HEK-Garantie</span>
+        <span class="footer-badge">⚡ 24h Antwort</span>
+        <span class="footer-badge">👤 Kein Callcenter</span>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Navigation</h4><ul><li><a href="#kaufen">Fahrzeuge kaufen</a></li><li><a href="#verkaufen">Fahrzeug verkaufen</a></li><li><a href="#warum">Über uns</a></li><li><a href="#b2b">Für Händler</a></li><li><a href="#kontakt">Kontakt</a></li></ul></div>
     <div class="footer-col"><h4>Kontakt</h4><ul><li><a href="tel:+493012345678">+49 30 123 456 78</a></li><li><a href="#">info@autoelite-berlin.de</a></li><li><a href="#">Kurfürstendamm 42, Berlin</a></li><li><a href="#">Mo–Sa, 09–19 Uhr</a></li></ul></div>
   </div>
   <div class="footer-bottom">
@@ -336,12 +494,12 @@
     <div class="modal-body">
       <div class="modal-top">
         <div><div class="modal-make" id="mMarke"></div><div class="modal-model" id="mModell"></div></div>
-        <div><div class="modal-price-big" id="mPreis"></div><div class="modal-price-note">inkl. 12 Mon. Gewährleistung</div></div>
+        <div><div class="modal-price-big" id="mPreis"></div><div class="modal-price-note">Flottenfahrzeug · geprüft &amp; dokumentiert</div></div>
       </div>
       <div class="modal-specs" id="mSpecs"></div>
       <p class="modal-desc" id="mDesc"></p>
       <div class="modal-actions">
-        <button class="btn-modal-primary" onclick="closeModal();scrollToKontakt()">Jetzt anfragen — Kostenlos & unverbindlich</button>
+        <button class="btn-modal-primary" onclick="closeModal();scrollToKontakt()">Jetzt anfragen — Kostenlos &amp; unverbindlich</button>
         <button class="btn-modal-outline" onclick="closeModal()">Zurück zur Übersicht</button>
       </div>
     </div>
@@ -351,8 +509,29 @@
 <!-- TOAST -->
 <div class="toast" id="toast"><span class="toast-icon">✓</span><span id="toastMsg"></span></div>
 
-<!-- EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="app.js"></script>
+<script>
+// ── Scroll Reveal
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ── Sync carCountDisplay
+const origRender = window.renderGrid;
+window.addEventListener('load', () => {
+  const syncCount = () => {
+    const n = document.getElementById('carCountNum');
+    const d = document.getElementById('carCountDisplay');
+    if (n && d) d.textContent = n.textContent;
+  };
+  const _r = window.renderGrid;
+  if (_r) {
+    window.renderGrid = function(list) { _r(list); syncCount(); };
+    syncCount();
+  }
+});
+</script>
 </body>
 </html>
