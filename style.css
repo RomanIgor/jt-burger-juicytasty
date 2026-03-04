@@ -578,3 +578,69 @@ footer { background:var(--bg2); border-top:1px solid var(--border-g); padding:60
   th:nth-child(3),td:nth-child(3),th:nth-child(4),td:nth-child(4){display:none}
   .toast{left:16px;right:16px;bottom:16px}
 }
+
+/* ── B2B ADDITIONS ── */
+.b2b-hek-banner {
+  background: linear-gradient(135deg, var(--gold-dim) 0%, rgba(201,168,76,0.04) 100%);
+  border-bottom: 1px solid var(--border-g);
+  border-top: 3px solid var(--gold);
+  padding: 20px 60px;
+}
+.b2b-hek-inner {
+  display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  max-width: 1300px; margin: 0 auto;
+}
+.b2b-hek-badge {
+  background: var(--gold); color: #0b0f1a;
+  font-size: 12px; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; padding: 6px 16px; border-radius: 2px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.b2b-hek-text { flex: 1; font-size: 14px; color: var(--text2); line-height: 1.6; }
+.b2b-hek-text strong { color: var(--text); }
+.b2b-hek-btn {
+  background: none; border: 1px solid var(--gold); color: var(--gold);
+  padding: 9px 20px; font-family: var(--font-b); font-size: 12px; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase; cursor: pointer;
+  transition: all .25s; border-radius: var(--radius);
+  white-space: nowrap; text-decoration: none; display: inline-block;
+}
+.b2b-hek-btn:hover { background: var(--gold); color: #0b0f1a; }
+.b2b-glossar {
+  margin-top: 36px; background: var(--bg2);
+  border: 1px solid var(--border-g); border-radius: 4px; overflow: hidden;
+}
+.b2b-glossar-title {
+  display: flex; align-items: center; gap: 10px;
+  padding: 13px 20px; background: var(--gold-dim);
+  border-bottom: 1px solid var(--border-g);
+  font-size: 12px; font-weight: 600; color: var(--gold);
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.b2b-glossar-grid { display: grid; grid-template-columns: 1fr 1fr; }
+.b2b-glossar-item {
+  padding: 18px 20px; border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border); transition: background .2s;
+}
+.b2b-glossar-item:nth-child(even) { border-right: none; }
+.b2b-glossar-item:nth-last-child(-n+2) { border-bottom: none; }
+.b2b-glossar-item:hover { background: var(--bg3); }
+.b2b-glossar-kuerzel { font-family: var(--font-h); font-size: 22px; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+.b2b-glossar-name { font-size: 11px; font-weight: 600; color: var(--text); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
+.b2b-glossar-desc { font-size: 13px; color: var(--text2); line-height: 1.6; }
+.b2b-glossar-desc strong { color: var(--text); }
+.b2b-standgebuehr { margin-top: 16px; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+.b2b-stand-row { display: flex; align-items: center; gap: 14px; padding: 14px 18px; font-size: 14px; color: var(--text2); }
+.b2b-stand-row strong { color: var(--text); }
+.b2b-stand-ok { background: rgba(76,175,130,.06); border-bottom: 1px solid var(--border); }
+.b2b-stand-warn { background: rgba(224,168,76,.06); }
+.b2b-stand-icon { font-size: 18px; flex-shrink: 0; }
+@media(max-width:900px) { .b2b-hek-banner { padding: 16px 32px; } }
+@media(max-width:640px) {
+  .b2b-hek-banner { padding: 16px 20px; }
+  .b2b-hek-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .b2b-glossar-grid { grid-template-columns: 1fr; }
+  .b2b-glossar-item { border-right: none !important; }
+  .b2b-glossar-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .b2b-glossar-item:last-child { border-bottom: none; }
+}
