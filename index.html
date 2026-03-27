@@ -547,6 +547,69 @@ footer{background:var(--bg);padding:48px 5vw 36px;border-top:1px solid var(--bor
   .reveal{opacity:1;transform:none;}
 }
 
+/* ─── ORDER MODAL ─────────────────────────────────────── */
+.omodal{
+  position:fixed;inset:0;z-index:600;
+  display:flex;align-items:flex-end;justify-content:center;
+  opacity:0;pointer-events:none;
+  transition:opacity .3s;
+}
+.omodal.open{opacity:1;pointer-events:all;}
+.omodal-bg{
+  position:absolute;inset:0;
+  background:rgba(0,0,0,.7);backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+}
+.omodal-sheet{
+  position:relative;z-index:1;
+  background:var(--card);
+  border-radius:var(--r-lg) var(--r-lg) 0 0;
+  border:1px solid var(--border);border-bottom:none;
+  padding:10px 24px 36px;
+  width:100%;max-width:500px;
+  transform:translateY(40px);
+  transition:transform .38s cubic-bezier(.4,0,.2,1);
+  box-shadow:0 -12px 60px rgba(0,0,0,.7);
+}
+.omodal.open .omodal-sheet{transform:translateY(0);}
+.omodal-handle{
+  width:40px;height:4px;border-radius:2px;
+  background:rgba(255,255,255,.14);
+  margin:0 auto 24px;
+}
+.omodal-eyebrow{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,90,31,.12);border:1px solid rgba(255,90,31,.28);
+  color:var(--orange);font-size:10px;font-weight:800;
+  padding:5px 14px;border-radius:var(--r-pill);
+  text-transform:uppercase;letter-spacing:.09em;margin-bottom:12px;
+}
+.omodal-name{font-size:20px;font-weight:800;color:var(--white);margin-bottom:6px;line-height:1.3;}
+.omodal-price{font-family:'Bebas Neue',sans-serif;font-size:38px;color:var(--orange);line-height:1;margin-bottom:22px;}
+.omodal-divider{height:1px;background:var(--border2);margin-bottom:20px;}
+.omodal-label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;}
+.omodal-btns{display:flex;flex-direction:column;gap:10px;}
+.omodal-btns .btn-primary,.omodal-btns .btn-wa{
+  width:100%;justify-content:center;font-size:15px;padding:16px;
+}
+.omodal-close-btn{
+  width:100%;margin-top:8px;padding:12px;
+  background:transparent;border:none;
+  color:var(--muted);font-size:14px;font-weight:700;
+  cursor:pointer;font-family:'Karla',sans-serif;
+  transition:color .2s;border-radius:var(--r-pill);
+}
+.omodal-close-btn:hover{color:var(--white);background:rgba(255,255,255,.05);}
+@media(min-width:769px){
+  .omodal{align-items:center;}
+  .omodal-sheet{
+    border-radius:var(--r-lg);border-bottom:1px solid var(--border);
+    max-width:420px;
+    transform:scale(.94) translateY(12px);
+  }
+  .omodal.open .omodal-sheet{transform:scale(1) translateY(0);}
+}
+
 /* ─── RESPONSIVE ──────────────────────────────────────── */
 @media(max-width:1080px){
   .feat-grid{grid-template-columns:repeat(2,1fr);}
@@ -961,7 +1024,7 @@ footer{background:var(--bg);padding:48px 5vw 36px;border-top:1px solid var(--bor
         <div class="menu-card-body"><div class="menu-card-name">BBQ Chicken Wings 6 St.</div><div class="menu-card-desc">Saftige Chicken Wings mit BBQ Sauce</div><div class="menu-card-footer"><div class="menu-card-price">7,00€</div><a href="https://www.lieferando.de/speisekarte/jt-burger-juicytasty" target="_blank" class="menu-card-btn" rel="noopener"><i data-lucide="shopping-bag"></i> Bestellen</a></div></div>
       </article>
       <article class="menu-card">
-        <div class="menu-card-img-wrap"><img class="menu-card-img" src="https://images.unsplash.com/photo-1600555379765-f8eec3a1358c?w=600&q=80" alt="Chili Cheese Nuggets" loading="lazy"><div class="menu-card-overlay" aria-hidden="true"></div></div>
+        <div class="menu-card-img-wrap"><img class="menu-card-img" src="https://images.unsplash.com/photo-1562802378-063ec186a863?w=600&q=80" alt="Chili Cheese Nuggets" loading="lazy"><div class="menu-card-overlay" aria-hidden="true"></div></div>
         <div class="menu-card-body"><div class="menu-card-name">Chili Cheese Nuggets 6 St.</div><div class="menu-card-desc">Knusprig frittiert mit Chili Cheese Sauce</div><div class="menu-card-footer"><div class="menu-card-price">6,50€</div><a href="https://www.lieferando.de/speisekarte/jt-burger-juicytasty" target="_blank" class="menu-card-btn" rel="noopener"><i data-lucide="shopping-bag"></i> Bestellen</a></div></div>
       </article>
       <article class="menu-card">
@@ -973,7 +1036,7 @@ footer{background:var(--bg);padding:48px 5vw 36px;border-top:1px solid var(--bor
         <div class="menu-card-body"><div class="menu-card-name">Steakhouse Pommes + Garlic Parmesan</div><div class="menu-card-desc">Mit Knoblauch-Parmesan-Topping</div><div class="menu-card-footer"><div class="menu-card-price">5,50€</div><a href="https://www.lieferando.de/speisekarte/jt-burger-juicytasty" target="_blank" class="menu-card-btn" rel="noopener"><i data-lucide="shopping-bag"></i> Bestellen</a></div></div>
       </article>
       <article class="menu-card">
-        <div class="menu-card-img-wrap"><img class="menu-card-img" src="https://images.unsplash.com/photo-1584345604476-8ec5e83a4b85?w=600&q=80" alt="Mozzarella Sticks" loading="lazy"><div class="menu-card-overlay" aria-hidden="true"></div></div>
+        <div class="menu-card-img-wrap"><img class="menu-card-img" src="https://images.unsplash.com/photo-1531749668029-2db88e4276c7?w=600&q=80" alt="Mozzarella Sticks" loading="lazy"><div class="menu-card-overlay" aria-hidden="true"></div></div>
         <div class="menu-card-body"><div class="menu-card-name">Mozzarella Sticks 6 St.</div><div class="menu-card-desc">Knusprig panierter Mozzarella</div><div class="menu-card-footer"><div class="menu-card-price">7,00€</div><a href="https://www.lieferando.de/speisekarte/jt-burger-juicytasty" target="_blank" class="menu-card-btn" rel="noopener"><i data-lucide="shopping-bag"></i> Bestellen</a></div></div>
       </article>
       <article class="menu-card">
@@ -1110,6 +1173,29 @@ footer{background:var(--bg);padding:48px 5vw 36px;border-top:1px solid var(--bor
   <p class="order-note">WhatsApp-Bestellung = kein Aufschlag · direkt beim Restaurant</p>
 </section>
 
+<!-- ═══════════════════ ORDER MODAL ══════════════════ -->
+<div id="omodal" class="omodal" role="dialog" aria-modal="true" aria-labelledby="omodalName">
+  <div class="omodal-bg" onclick="closeOrder()"></div>
+  <div class="omodal-sheet">
+    <div class="omodal-handle"></div>
+    <div class="omodal-eyebrow">Bestellung aufgeben</div>
+    <div class="omodal-name" id="omodalName"></div>
+    <div class="omodal-price" id="omodalPrice"></div>
+    <div class="omodal-divider"></div>
+    <div class="omodal-label">Wie möchtest du bestellen?</div>
+    <div class="omodal-btns">
+      <a href="https://www.lieferando.de/speisekarte/jt-burger-juicytasty" target="_blank" class="btn-primary" rel="noopener">
+        <i data-lucide="bike"></i> Lieferando bestellen
+      </a>
+      <a id="omodalWa" href="#" target="_blank" class="btn-wa" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp bestellen
+      </a>
+    </div>
+    <button class="omodal-close-btn" onclick="closeOrder()">Abbrechen</button>
+  </div>
+</div>
+
 <!-- ═══════════════════════ FOOTER ════════════════════ -->
 <footer>
   <div class="footer-top">
@@ -1182,6 +1268,37 @@ const revealObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ── Order modal ───────────────────────────────────────
+function openOrder(name, price) {
+  document.getElementById('omodalName').textContent = name;
+  document.getElementById('omodalPrice').textContent = price;
+  const msg = encodeURIComponent(
+    'Hallo, ich möchte bestellen:\n\n' +
+    '🍔 ' + name + ' – ' + price +
+    '\n\nBitte um Bestätigung. Danke!'
+  );
+  document.getElementById('omodalWa').href = 'https://wa.me/491774499487?text=' + msg;
+  document.getElementById('omodal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  lucide.createIcons({ nodes: [document.getElementById('omodal')] });
+}
+function closeOrder() {
+  document.getElementById('omodal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOrder(); });
+
+// Intercept all menu card "Bestellen" button clicks
+document.addEventListener('click', function(e) {
+  const btn = e.target.closest('.menu-card-btn');
+  if (!btn) return;
+  e.preventDefault();
+  const card = btn.closest('.menu-card');
+  const name  = card.querySelector('.menu-card-name').textContent.trim();
+  const price = card.querySelector('.menu-card-price').textContent.trim();
+  openOrder(name, price);
+});
 
 // ── Lucide icons ──────────────────────────────────────
 lucide.createIcons();
