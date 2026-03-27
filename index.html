@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JT Smash Burger – Juicy & Tasty | Chemnitz</title>
+<title>JT Burger – Juicy & Tasty | Smash Burger Chemnitz</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <style>
@@ -55,8 +55,9 @@ nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.6);}
 .nav-logo img{height:44px;width:44px;object-fit:contain;border-radius:50%;
   filter:drop-shadow(0 0 10px rgba(255,90,31,.4));transition:filter .2s;}
 .nav-logo:hover img{filter:drop-shadow(0 0 18px rgba(255,90,31,.65));}
-.nav-brand{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2.5px;color:var(--white);}
+.nav-brand{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1.5px;color:var(--white);white-space:nowrap;}
 .nav-brand span{color:var(--orange);}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1.5px;color:var(--white);}
 .nav-links{display:flex;gap:34px;list-style:none;}
 .nav-links a{color:var(--light);text-decoration:none;font-size:13px;font-weight:700;
   letter-spacing:.05em;text-transform:uppercase;transition:color .2s;position:relative;}
@@ -572,6 +573,7 @@ footer{background:var(--bg);padding:48px 5vw 36px;border-top:1px solid var(--bor
   border:1px solid var(--border);border-bottom:none;
   padding:10px 24px 36px;
   width:100%;max-width:500px;
+  max-height:92vh;overflow-y:auto;
   transform:translateY(40px);
   transition:transform .38s cubic-bezier(.4,0,.2,1);
   box-shadow:0 -12px 60px rgba(0,0,0,.7);
@@ -622,6 +624,105 @@ footer{background:var(--bg);padding:48px 5vw 36px;border-top:1px solid var(--bor
 .btn-lieferando i,.btn-lieferando svg{width:22px;height:22px;color:var(--orange);flex-shrink:0;}
 .btn-lieferando strong{display:block;font-size:14px;font-weight:700;color:var(--white);margin-bottom:2px;}
 .btn-lieferando small{display:block;font-size:11px;color:var(--muted);line-height:1.4;}
+/* Extras */
+.omodal-extras-wrap{margin-bottom:4px;}
+.omodal-extras-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.omodal-extras-title{font-size:13px;font-weight:800;color:var(--white);text-transform:uppercase;letter-spacing:.09em;}
+.omodal-extras-opt{font-size:10px;background:rgba(255,255,255,.08);color:var(--muted);padding:3px 12px;border-radius:var(--r-pill);font-weight:700;text-transform:uppercase;letter-spacing:.06em;}
+.omodal-extras-list{display:flex;flex-direction:column;}
+.extra-row{
+  display:flex;align-items:center;gap:12px;
+  padding:11px 8px;border-bottom:1px solid var(--border2);
+  cursor:pointer;border-radius:8px;
+  transition:background .15s;margin:0 -8px;
+}
+.extra-row:last-child{border-bottom:none;}
+.extra-row:hover{background:rgba(255,90,31,.06);}
+.extra-row.checked{background:rgba(255,90,31,.08);}
+.extra-chk{
+  width:21px;height:21px;border-radius:6px;flex-shrink:0;
+  border:2px solid rgba(255,255,255,.18);background:transparent;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .15s;
+}
+.extra-row.checked .extra-chk{background:var(--orange);border-color:var(--orange);}
+.extra-chk svg{display:none;width:12px;height:12px;color:#fff;}
+.extra-row.checked .extra-chk svg{display:block;}
+.extra-name{flex:1;font-size:14px;font-weight:600;color:var(--light);}
+.extra-price-tag{font-size:13px;font-weight:800;color:var(--orange);}
+/* Qty + Total */
+.omodal-bottom-bar{
+  display:flex;justify-content:space-between;align-items:center;
+  margin:14px 0;padding:14px 16px;
+  background:rgba(255,255,255,.04);border:1px solid var(--border2);
+  border-radius:var(--r);
+}
+.omodal-qty{display:flex;align-items:center;gap:14px;}
+.qty-btn{
+  width:34px;height:34px;border-radius:50%;
+  background:rgba(255,255,255,.08);border:1px solid var(--border2);
+  color:var(--white);font-size:20px;line-height:1;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all .15s;font-family:inherit;font-weight:300;
+}
+.qty-btn:hover{background:var(--orange);border-color:var(--orange);}
+.qty-num{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--white);min-width:20px;text-align:center;}
+.omodal-total-wrap{text-align:right;}
+.omodal-total-label{font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.09em;display:block;margin-bottom:1px;}
+.omodal-total-price{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--orange);line-height:1;}
+/* Abholung / Lieferung toggle */
+.omodal-type-label{font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;}
+.omodal-type-toggle{
+  display:flex;background:rgba(255,255,255,.05);
+  border:1px solid var(--border2);border-radius:var(--r);padding:4px;margin-bottom:14px;
+}
+.type-btn{
+  flex:1;padding:11px 8px;border:none;background:transparent;
+  color:var(--muted);font-size:14px;font-weight:700;
+  cursor:pointer;border-radius:10px;transition:all .2s;
+  font-family:'Karla',sans-serif;
+  display:flex;align-items:center;justify-content:center;gap:7px;
+}
+.type-btn svg{width:16px;height:16px;}
+.type-btn.active{background:var(--orange);color:#fff;box-shadow:0 2px 12px rgba(255,90,31,.4);}
+.type-btn:not(.active):hover{color:var(--light);}
+/* Address autocomplete */
+.omodal-addr-wrap{margin-bottom:14px;animation:fadeUp .2s ease;}
+.omodal-addr-inner{position:relative;}
+.omodal-addr-field{
+  width:100%;padding:13px 40px 13px 14px;
+  background:rgba(255,255,255,.06);
+  border:1.5px solid var(--border2);border-radius:var(--r);
+  color:var(--white);font-size:15px;font-family:'Karla',sans-serif;
+  outline:none;transition:border-color .2s;
+}
+.omodal-addr-field:focus{border-color:rgba(255,90,31,.55);}
+.omodal-addr-field::placeholder{color:var(--muted);}
+.omodal-addr-clear{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  background:none;border:none;color:var(--muted);cursor:pointer;
+  padding:4px;display:flex;align-items:center;transition:color .15s;
+}
+.omodal-addr-clear:hover{color:var(--white);}
+.omodal-addr-clear svg{width:16px;height:16px;}
+/* .omodal-sugg is position:fixed in body, styled inline */
+.sugg-row{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:12px 14px;cursor:pointer;
+  border-bottom:1px solid var(--border2);transition:background .15s;
+}
+.sugg-row:last-of-type{border-bottom:none;}
+.sugg-row:hover{background:rgba(255,90,31,.1);}
+.sugg-pin{color:var(--orange);flex-shrink:0;margin-top:2px;width:15px;height:15px;}
+.sugg-main{font-size:13px;color:var(--light);font-weight:600;line-height:1.4;}
+.sugg-sub{font-size:11px;color:var(--muted);margin-top:2px;}
+.sugg-loading{padding:14px;font-size:13px;color:var(--muted);text-align:center;}
+.sugg-credit{
+  padding:7px 14px;font-size:10px;color:var(--muted);
+  text-align:right;border-top:1px solid var(--border2);
+}
+/* WA button as button element */
+button.btn-wa{border:none;font-family:'Karla',sans-serif;width:100%;}
 .omodal-close-btn{
   width:100%;margin-top:8px;padding:12px;
   background:transparent;border:none;
@@ -708,8 +809,8 @@ footer{background:var(--bg);padding:48px 5vw 36px;border-top:1px solid var(--bor
 <!-- ═══════════════════════ NAV ═══════════════════════ -->
 <nav id="mainNav">
   <a href="#" class="nav-logo">
-    <img src="logo_1.jpeg" alt="JT Smash Burger">
-    <span class="nav-brand">JT <span>BURGER</span></span>
+    <img src="logo_1.jpeg" alt="JT Burger">
+    <span class="nav-brand">JT Burger <span>– Juicy&amp;Tasty</span></span>
   </a>
   <ul class="nav-links">
     <li><a href="#menu">Menü</a></li>
@@ -1055,7 +1156,7 @@ footer{background:var(--bg);padding:48px 5vw 36px;border-top:1px solid var(--bor
         <div class="menu-card-body"><div class="menu-card-name">BBQ Chicken Wings 6 St.</div><div class="menu-card-desc">Saftige Chicken Wings mit BBQ Sauce</div><div class="menu-card-footer"><div class="menu-card-price">7,00€</div><a href="https://www.lieferando.de/speisekarte/jt-burger-juicytasty" target="_blank" class="menu-card-btn" rel="noopener"><i data-lucide="shopping-bag"></i> Bestellen</a></div></div>
       </article>
       <article class="menu-card">
-        <div class="menu-card-img-wrap"><img class="menu-card-img" src="https://images.unsplash.com/photo-1562802378-063ec186a863?w=600&q=80" alt="Chili Cheese Nuggets" loading="lazy"><div class="menu-card-overlay" aria-hidden="true"></div></div>
+        <div class="menu-card-img-wrap"><img class="menu-card-img" src="https://images.unsplash.com/photo-1585325701165-8fd9c9cd2e07?w=600&q=80" alt="Chili Cheese Nuggets" loading="lazy"><div class="menu-card-overlay" aria-hidden="true"></div></div>
         <div class="menu-card-body"><div class="menu-card-name">Chili Cheese Nuggets 6 St.</div><div class="menu-card-desc">Knusprig frittiert mit Chili Cheese Sauce</div><div class="menu-card-footer"><div class="menu-card-price">6,50€</div><a href="https://www.lieferando.de/speisekarte/jt-burger-juicytasty" target="_blank" class="menu-card-btn" rel="noopener"><i data-lucide="shopping-bag"></i> Bestellen</a></div></div>
       </article>
       <article class="menu-card">
@@ -1071,7 +1172,7 @@ footer{background:var(--bg);padding:48px 5vw 36px;border-top:1px solid var(--bor
         <div class="menu-card-body"><div class="menu-card-name">Mozzarella Sticks 6 St.</div><div class="menu-card-desc">Knusprig panierter Mozzarella</div><div class="menu-card-footer"><div class="menu-card-price">7,00€</div><a href="https://www.lieferando.de/speisekarte/jt-burger-juicytasty" target="_blank" class="menu-card-btn" rel="noopener"><i data-lucide="shopping-bag"></i> Bestellen</a></div></div>
       </article>
       <article class="menu-card">
-        <div class="menu-card-img-wrap"><img class="menu-card-img" src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80" alt="JT Sauce" loading="lazy"><div class="menu-card-overlay" aria-hidden="true"></div></div>
+        <div class="menu-card-img-wrap"><img class="menu-card-img" src="https://images.unsplash.com/photo-1559181567-c3190ca9be40?w=600&q=80" alt="JT Sauce" loading="lazy"><div class="menu-card-overlay" aria-hidden="true"></div></div>
         <div class="menu-card-body"><div class="menu-card-name">JT Sauce</div><div class="menu-card-desc">Unsere hausgemachte Spezial-Sauce</div><div class="menu-card-footer"><div class="menu-card-price">1,50€</div><a href="https://www.lieferando.de/speisekarte/jt-burger-juicytasty" target="_blank" class="menu-card-btn" rel="noopener"><i data-lucide="shopping-bag"></i> Bestellen</a></div></div>
       </article>
     </div>
@@ -1204,6 +1305,15 @@ footer{background:var(--bg);padding:48px 5vw 36px;border-top:1px solid var(--bor
   <p class="order-note">WhatsApp-Bestellung = kein Aufschlag · direkt beim Restaurant</p>
 </section>
 
+<!-- Address suggestions – fixed to body, avoids modal clipping -->
+<div id="omodalSugg" style="
+  position:fixed;z-index:9999;display:none;
+  background:#1e1a14;border:1px solid rgba(255,140,60,.2);
+  border-radius:14px;overflow:hidden;
+  box-shadow:0 16px 48px rgba(0,0,0,.7);
+  max-height:280px;overflow-y:auto;
+"></div>
+
 <!-- ═══════════════════ ORDER MODAL ══════════════════ -->
 <div id="omodal" class="omodal" role="dialog" aria-modal="true" aria-labelledby="omodalName">
   <div class="omodal-bg" onclick="closeOrder()"></div>
@@ -1213,12 +1323,62 @@ footer{background:var(--bg);padding:48px 5vw 36px;border-top:1px solid var(--bor
     <div class="omodal-name" id="omodalName"></div>
     <div class="omodal-price" id="omodalPrice"></div>
     <div class="omodal-divider"></div>
+
+    <!-- EXTRAS -->
+    <div id="omodalExtrasWrap" class="omodal-extras-wrap">
+      <div class="omodal-extras-header">
+        <span class="omodal-extras-title">Deine Extras</span>
+        <span class="omodal-extras-opt">Optional</span>
+      </div>
+      <div id="omodalExtras" class="omodal-extras-list"></div>
+    </div>
+
+    <!-- QUANTITY + TOTAL -->
+    <div class="omodal-bottom-bar">
+      <div class="omodal-qty">
+        <button class="qty-btn" onclick="changeQty(-1)" aria-label="Menge verringern">−</button>
+        <span class="qty-num" id="omodalQty">1</span>
+        <button class="qty-btn" onclick="changeQty(1)" aria-label="Menge erhöhen">+</button>
+      </div>
+      <div class="omodal-total-wrap">
+        <span class="omodal-total-label">Gesamt</span>
+        <span class="omodal-total-price" id="omodalTotal">0,00 €</span>
+      </div>
+    </div>
+
+    <div class="omodal-divider"></div>
+
+    <!-- ABHOLUNG / LIEFERUNG -->
+    <div class="omodal-type-label">Bestellart</div>
+    <div class="omodal-type-toggle">
+      <button class="type-btn active" data-type="abholung" onclick="setOrderType('abholung')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+        Abholung
+      </button>
+      <button class="type-btn" data-type="lieferung" onclick="setOrderType('lieferung')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C8.1 17.7 4 14.2 4 10a8 8 0 0116 0c0 4.2-4.1 7.7-8 11.7z"/></svg>
+        Lieferung
+      </button>
+    </div>
+
+    <!-- ADDRESS (shown only for Lieferung) -->
+    <div id="omodalAddrWrap" class="omodal-addr-wrap" style="display:none;">
+      <div class="omodal-addr-inner">
+        <input id="omodalAddrInput" class="omodal-addr-field"
+          type="text" placeholder="Straße und Hausnummer eingeben…"
+          autocomplete="off" oninput="onAddrInput(event)">
+        <button class="omodal-addr-clear" onclick="clearAddr()" aria-label="Adresse löschen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
     <div class="omodal-label">Wie möchtest du bestellen?</div>
     <div class="omodal-btns">
-      <a id="omodalWa" href="#" target="_blank" class="btn-wa omodal-btn-main" rel="noopener">
+      <button onclick="sendWhatsApp()" class="btn-wa omodal-btn-main">
         <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp bestellen
-      </a>
+      </button>
       <p class="omodal-wa-note">Kein Aufschlag · direkt beim Restaurant · schnellste Antwort</p>
       <div class="omodal-separator"><span>oder</span></div>
       <a href="https://www.lieferando.de/speisekarte/jt-burger-juicytasty" target="_blank" class="btn-lieferando" rel="noopener">
@@ -1237,8 +1397,8 @@ footer{background:var(--bg);padding:48px 5vw 36px;border-top:1px solid var(--bor
 <footer>
   <div class="footer-top">
     <a href="#" class="footer-logo">
-      <img src="logo_1.jpeg" alt="JT Smash Burger">
-      <span class="footer-brand">JT BURGER</span>
+      <img src="logo_1.jpeg" alt="JT Burger">
+      <span class="footer-brand">JT Burger <span style="color:var(--orange);">– Juicy&amp;Tasty</span></span>
     </a>
     <ul class="footer-links">
       <li><a href="#menu">Menü</a></li>
@@ -1306,39 +1466,294 @@ const revealObs = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-// ── Order modal ───────────────────────────────────────
-function openOrder(name, price) {
-  document.getElementById('omodalName').textContent = name;
-  document.getElementById('omodalPrice').textContent = price;
-  const msg = encodeURIComponent(
-    'Hallo, ich möchte bestellen:\n\n' +
-    '🍔 ' + name + ' – ' + price +
-    '\n\nBitte um Bestätigung. Danke!'
+// ── Delivery type & address ───────────────────────────
+let orderType      = 'abholung';
+let selectedAddr   = '';
+let addrTimer      = null;
+
+function setOrderType(type) {
+  orderType = type;
+  document.querySelectorAll('.type-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.type === type)
   );
-  document.getElementById('omodalWa').href = 'https://wa.me/491774499487?text=' + msg;
+  const wrap = document.getElementById('omodalAddrWrap');
+  wrap.style.display = type === 'lieferung' ? '' : 'none';
+  if (type !== 'lieferung') { selectedAddr = ''; clearAddr(); }
+}
+
+function clearAddr() {
+  const inp  = document.getElementById('omodalAddrInput');
+  const sugg = document.getElementById('omodalSugg');
+  if (inp)  inp.value = '';
+  if (sugg) { sugg.style.display = 'none'; sugg.innerHTML = ''; }
+  selectedAddr = '';
+}
+
+function getSugg() { return document.getElementById('omodalSugg'); }
+
+function positionSugg() {
+  const inp  = document.getElementById('omodalAddrInput');
+  const sugg = getSugg();
+  if (!inp || !sugg) return;
+  const r = inp.getBoundingClientRect();
+  sugg.style.top   = (r.bottom + 6) + 'px';
+  sugg.style.left  = r.left + 'px';
+  sugg.style.width = r.width + 'px';
+}
+
+function hideSugg() { getSugg().style.display = 'none'; }
+
+function onAddrInput(e) {
+  selectedAddr = '';
+  const q = e.target.value.trim();
+  clearTimeout(addrTimer);
+  if (q.length < 2) { hideSugg(); return; }
+  addrTimer = setTimeout(() => fetchAddr(q), 300);
+}
+
+async function fetchAddr(q) {
+  const sugg = getSugg();
+  positionSugg();
+  sugg.style.display = 'block';
+  sugg.innerHTML = '<div class="sugg-loading">Suche…</div>';
+  try {
+    // Photon (komoot.io) – designed for live autocomplete, CORS ok, no API key needed
+    const bboxChemnitz = '&bbox=12.6%2C50.7%2C13.2%2C51.0';
+    let url  = 'https://photon.komoot.io/api/?q=' + encodeURIComponent(q) + '&lang=de&limit=6' + bboxChemnitz;
+    let resp = await fetch(url);
+    let data = await resp.json();
+    // If nothing in Chemnitz bbox, try all Germany
+    if (!data.features || data.features.length === 0) {
+      url  = 'https://photon.komoot.io/api/?q=' + encodeURIComponent(q) + '&lang=de&limit=6';
+      resp = await fetch(url);
+      data = await resp.json();
+    }
+    renderAddr(data.features || []);
+  } catch (err) {
+    sugg.innerHTML = '<div class="sugg-loading">Fehler – bitte erneut versuchen</div>';
+  }
+}
+
+function renderAddr(features) {
+  const sugg = getSugg();
+  if (!features.length) {
+    sugg.innerHTML = '<div class="sugg-loading">Keine Ergebnisse gefunden</div>';
+    return;
+  }
+  const pin = '<svg style="width:14px;height:14px;flex-shrink:0;color:#FF5A1F;margin-top:2px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="10" r="3"/><path d="M12 21.7C8.1 17.7 4 14.2 4 10a8 8 0 0116 0c0 4.2-4.1 7.7-8 11.7z"/></svg>';
+  const rows = features.map(f => {
+    const p     = f.properties || {};
+    const road  = p.street || p.name || '';
+    const num   = p.housenumber || '';
+    const zip   = p.postcode || '';
+    const city  = p.city || p.town || p.village || p.county || '';
+    const line1 = road + (num ? ' ' + num : '');
+    const line2 = [zip, city, 'Deutschland'].filter(Boolean).join(', ');
+    const full  = [line1, zip ? zip + ' ' + city : city].filter(Boolean).join(', ');
+    const div   = document.createElement('div');
+    div.className = 'sugg-row';
+    div.style.cssText = 'display:flex;align-items:flex-start;gap:10px;padding:12px 14px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.06);transition:background .15s;';
+    div.innerHTML = pin + '<div><div class="sugg-main">' + (line1 || city) + '</div><div class="sugg-sub">' + line2 + '</div></div>';
+    div.addEventListener('mouseenter', () => { div.style.background = 'rgba(255,90,31,.1)'; });
+    div.addEventListener('mouseleave', () => { div.style.background = ''; });
+    div.addEventListener('click', () => selectAddr(full));
+    return div;
+  });
+  sugg.innerHTML = '';
+  rows.forEach(r => sugg.appendChild(r));
+  const credit = document.createElement('div');
+  credit.className = 'sugg-credit';
+  credit.textContent = '© OpenStreetMap';
+  sugg.appendChild(credit);
+  positionSugg();
+  sugg.style.display = 'block';
+}
+
+function selectAddr(addr) {
+  selectedAddr = addr;
+  document.getElementById('omodalAddrInput').value = addr;
+  hideSugg();
+}
+
+// Hide suggestions when clicking outside input or suggestions
+document.addEventListener('click', e => {
+  if (!e.target.closest('#omodalAddrInput') && !e.target.closest('#omodalSugg')) hideSugg();
+});
+// Reposition on scroll/resize
+window.addEventListener('scroll', positionSugg, true);
+window.addEventListener('resize', positionSugg);
+
+// ── Extras per category (from Lieferando) ────────────
+const EXTRAS = {
+  smash: [
+    { name: 'extra Rindfleisch Patty (100g)', price: 3.00 },
+    { name: 'Bacon',                           price: 2.00 },
+    { name: 'Cheddar',                         price: 1.50 },
+    { name: 'Spiegelei',                       price: 1.50 },
+    { name: 'Jalapeños',                       price: 0.50 },
+  ],
+  'smash-menu': [
+    { name: 'extra Rindfleisch Patty (100g)', price: 3.00 },
+    { name: 'Bacon',                           price: 2.00 },
+    { name: 'Cheddar',                         price: 1.50 },
+    { name: 'Spiegelei',                       price: 1.50 },
+    { name: 'Jalapeños',                       price: 0.50 },
+  ],
+  chicken: [
+    { name: 'Bacon',     price: 2.00 },
+    { name: 'Cheddar',   price: 1.50 },
+    { name: 'Jalapeños', price: 0.50 },
+  ],
+  taco: [
+    { name: 'extra Fleisch',  price: 3.00 },
+    { name: 'Bacon',          price: 2.00 },
+    { name: 'Cheddar',        price: 1.50 },
+    { name: 'Jalapeños',      price: 0.50 },
+  ],
+  mac: [
+    { name: 'Bacon',     price: 2.00 },
+    { name: 'Cheddar',   price: 1.50 },
+    { name: 'Spiegelei', price: 1.50 },
+  ],
+  snacks: [],
+};
+
+// ── Order state ───────────────────────────────────────
+let ORDER = { name:'', basePrice:0, qty:1, extras:[], cat:'' };
+
+function parsePriceNum(str) {
+  return parseFloat(str.replace(/[€\s]/g,'').replace(',','.')) || 0;
+}
+function fmtPrice(n) {
+  return n.toFixed(2).replace('.', ',') + ' €';
+}
+
+function recalcTotal() {
+  const extSum = ORDER.extras.reduce((s, e) => s + e.price, 0);
+  const total  = (ORDER.basePrice + extSum) * ORDER.qty;
+  document.getElementById('omodalTotal').textContent = fmtPrice(total);
+}
+
+function changeQty(d) {
+  ORDER.qty = Math.max(1, Math.min(10, ORDER.qty + d));
+  document.getElementById('omodalQty').textContent = ORDER.qty;
+  recalcTotal();
+}
+
+function buildExtras(cat) {
+  const list = document.getElementById('omodalExtras');
+  const wrap = document.getElementById('omodalExtrasWrap');
+  const items = EXTRAS[cat] || [];
+  list.innerHTML = '';
+  wrap.style.display = items.length ? '' : 'none';
+  items.forEach(ex => {
+    const row = document.createElement('div');
+    row.className = 'extra-row';
+    row.innerHTML =
+      '<div class="extra-chk">' +
+        '<svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+      '</div>' +
+      '<span class="extra-name">mit ' + ex.name + '</span>' +
+      '<span class="extra-price-tag">+' + fmtPrice(ex.price) + '</span>';
+    row.addEventListener('click', () => {
+      row.classList.toggle('checked');
+      if (row.classList.contains('checked')) {
+        ORDER.extras.push(ex);
+      } else {
+        ORDER.extras = ORDER.extras.filter(x => x !== ex);
+      }
+      recalcTotal();
+    });
+    list.appendChild(row);
+  });
+}
+
+function openOrder(name, price, cat) {
+  ORDER = { name, basePrice: parsePriceNum(price), qty: 1, extras: [], cat };
+  document.getElementById('omodalName').textContent  = name;
+  document.getElementById('omodalPrice').textContent = price;
+  document.getElementById('omodalQty').textContent   = '1';
+  // Reset delivery type to Abholung
+  orderType = 'abholung';
+  document.querySelectorAll('.type-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.type === 'abholung')
+  );
+  document.getElementById('omodalAddrWrap').style.display = 'none';
+  clearAddr();
+  buildExtras(cat);
+  recalcTotal();
   document.getElementById('omodal').classList.add('open');
   document.body.style.overflow = 'hidden';
   lucide.createIcons({ nodes: [document.getElementById('omodal')] });
 }
+
+function sendWhatsApp() {
+  // Validate address if delivery
+  if (orderType === 'lieferung' && !selectedAddr) {
+    document.getElementById('omodalAddrInput').focus();
+    document.getElementById('omodalAddrInput').style.borderColor = 'rgba(255,90,31,.8)';
+    setTimeout(() => { document.getElementById('omodalAddrInput').style.borderColor = ''; }, 1800);
+    return;
+  }
+  const extSum = ORDER.extras.reduce((s, e) => s + e.price, 0);
+  const total  = (ORDER.basePrice + extSum) * ORDER.qty;
+  let msg = 'Hallo, ich möchte bestellen:\n\n';
+  msg += '🍔 ' + ORDER.qty + '× ' + ORDER.name + ' – ' + fmtPrice(ORDER.basePrice);
+  if (ORDER.extras.length) {
+    msg += '\n\nExtras:';
+    ORDER.extras.forEach(e => { msg += '\n✓ mit ' + e.name + ' (+' + fmtPrice(e.price) + ')'; });
+  }
+  msg += '\n\n💰 Gesamtpreis: ' + fmtPrice(total);
+  if (orderType === 'lieferung') {
+    msg += '\n\n📍 Lieferung an: ' + selectedAddr;
+  } else {
+    msg += '\n\n🏪 Abholung vor Ort (Zwickauer Straße 278)';
+  }
+  msg += '\n\nBitte um Bestätigung. Danke!';
+  window.open('https://wa.me/491774499487?text=' + encodeURIComponent(msg), '_blank');
+  closeOrder();
+}
+
 function closeOrder() {
   document.getElementById('omodal').classList.remove('open');
   document.body.style.overflow = '';
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOrder(); });
 
-// Intercept all menu card "Bestellen" button clicks
+// Intercept all menu card "Bestellen" clicks
 document.addEventListener('click', function(e) {
   const btn = e.target.closest('.menu-card-btn');
   if (!btn) return;
   e.preventDefault();
   const card = btn.closest('.menu-card');
+  const catEl = card.closest('.menu-cat');
+  const cat   = catEl ? catEl.id.replace('cat-','') : 'other';
   const name  = card.querySelector('.menu-card-name').textContent.trim();
   const price = card.querySelector('.menu-card-price').textContent.trim();
-  openOrder(name, price);
+  openOrder(name, price, cat);
 });
 
 // ── Lucide icons ──────────────────────────────────────
 lucide.createIcons();
+
+// ── Image fallback: if any menu card image fails to load ──
+document.querySelectorAll('.menu-card-img').forEach(img => {
+  img.addEventListener('error', function() {
+    this.style.opacity = '0';
+    const wrap = this.closest('.menu-card-img-wrap');
+    if (wrap) {
+      wrap.style.background = 'linear-gradient(135deg,#221A0E 0%,#1A1208 100%)';
+      if (!wrap.querySelector('.img-fallback-icon')) {
+        const icon = document.createElement('div');
+        icon.className = 'img-fallback-icon';
+        icon.setAttribute('aria-hidden', 'true');
+        icon.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:40px;height:40px;color:rgba(255,90,31,.35)"><path d="M3 11h18M3 13h18M5 11V7a7 7 0 0114 0v4M5 13v4a7 7 0 0014 0v-4"/></svg>';
+        icon.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;';
+        wrap.appendChild(icon);
+      }
+    }
+  }, { once: true });
+});
 </script>
 </body>
 </html>
