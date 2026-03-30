@@ -311,6 +311,14 @@ function clearCartAddr() {
 // ── Send cart via WhatsApp ────────────────────────────
 function sendCartWhatsApp() {
   if (CART.length === 0) return;
+  const cartName = (document.getElementById('cartNameInput').value || '').trim();
+  if (!cartName) {
+    const inp = document.getElementById('cartNameInput');
+    inp.focus();
+    inp.style.borderColor = 'rgba(255,90,31,.8)';
+    setTimeout(() => { inp.style.borderColor = ''; }, 1800);
+    return;
+  }
   if (cartOrderType === 'lieferung' && !cartSelAddr) {
     const inp = document.getElementById('cartAddrInput');
     inp.focus();
@@ -318,7 +326,7 @@ function sendCartWhatsApp() {
     setTimeout(() => { inp.style.borderColor = ''; }, 1800);
     return;
   }
-  let msg = 'Hallo, ich möchte bestellen:\n\n';
+  let msg = 'Hallo, ich möchte bestellen:\n\n👤 Name: ' + cartName + '\n\n';
   CART.forEach((item, i) => {
     const extSum    = item.extras.reduce((s, e) => s + e.price, 0);
     const itemTotal = (item.basePrice + extSum) * item.qty;

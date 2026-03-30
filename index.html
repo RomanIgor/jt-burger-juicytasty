@@ -529,8 +529,15 @@
   </div>
 
   <div class="cart-drawer-footer" id="cartFooter" style="display:none;">
+    <!-- Name -->
+    <div class="cart-type-label">Name</div>
+    <div class="cart-addr-inner">
+      <input id="cartNameInput" class="cart-addr-field"
+        type="text" placeholder="Vor- und Nachname…"
+        autocomplete="name">
+    </div>
     <!-- Delivery type -->
-    <div class="cart-type-label">Bestellart</div>
+    <div class="cart-type-label" style="margin-top:14px;">Bestellart</div>
     <div class="cart-type-toggle">
       <button class="type-btn active" data-type="abholung" onclick="setCartOrderType('abholung')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
