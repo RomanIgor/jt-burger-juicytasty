@@ -163,6 +163,7 @@ let cartOrderType = 'abholung';
 let cartSelAddr   = '';
 let addrTimer     = null;
 let addrAbort     = null;
+const addrCache   = new Map();
 
 function cartTotal() {
   return CART.reduce((sum, item) => {
@@ -378,13 +379,39 @@ async function fetchAddr(q) {
   const sugg = getSugg();
   positionSugg();
   sugg.style.display = 'block';
-  sugg.innerHTML = '<div class="sugg-loading">Suche…</div>';
+
+  // Show cached results immediately if available
+  if (addrCache.has(q)) {
+    renderAddr(addrCache.get(q));
+    return;
+  }
+
+  // Check if a prefix is cached — filter locally while fetching
+  for (const [key, val] of addrCache) {
+    if (q.startsWith(key) && key.length >= 3) {
+      const filtered = val.filter(f => {
+        const p = f.properties || {};
+        const name = ((p.street || p.name || '') + ' ' + (p.housenumber || '')).toLowerCase();
+        return name.includes(q.toLowerCase());
+      });
+      if (filtered.length) renderAddr(filtered);
+      else sugg.innerHTML = '<div class="sugg-loading">Suche…</div>';
+      break;
+    }
+  }
+
+  if (!sugg.querySelector('.sugg-row')) {
+    sugg.innerHTML = '<div class="sugg-loading">Suche…</div>';
+  }
+
   try {
     const url = 'https://photon.komoot.io/api/?q=' + encodeURIComponent(q)
       + '&lang=de&limit=6&lat=50.8357&lon=12.9241';
     const resp = await fetch(url, { signal: addrAbort.signal });
     const data = await resp.json();
-    renderAddr(data.features || []);
+    const features = data.features || [];
+    addrCache.set(q, features);
+    renderAddr(features);
   } catch (err) {
     if (err.name === 'AbortError') return;
     sugg.innerHTML = '<div class="sugg-loading">Fehler – bitte erneut versuchen</div>';
