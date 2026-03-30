@@ -162,6 +162,7 @@ let cartIdCounter = 0;
 let cartOrderType = 'abholung';
 let cartSelAddr   = '';
 let addrTimer     = null;
+let addrAbort     = null;
 
 function cartTotal() {
   return CART.reduce((sum, item) => {
@@ -372,22 +373,20 @@ function onCartAddrInput(e) {
 }
 
 async function fetchAddr(q) {
+  if (addrAbort) addrAbort.abort();
+  addrAbort = new AbortController();
   const sugg = getSugg();
   positionSugg();
   sugg.style.display = 'block';
   sugg.innerHTML = '<div class="sugg-loading">Suche…</div>';
   try {
-    const bboxChemnitz = '&bbox=12.6%2C50.7%2C13.2%2C51.0';
-    let url  = 'https://photon.komoot.io/api/?q=' + encodeURIComponent(q) + '&lang=de&limit=6' + bboxChemnitz;
-    let resp = await fetch(url);
-    let data = await resp.json();
-    if (!data.features || data.features.length === 0) {
-      url  = 'https://photon.komoot.io/api/?q=' + encodeURIComponent(q) + '&lang=de&limit=6';
-      resp = await fetch(url);
-      data = await resp.json();
-    }
+    const url = 'https://photon.komoot.io/api/?q=' + encodeURIComponent(q)
+      + '&lang=de&limit=6&lat=50.8357&lon=12.9241';
+    const resp = await fetch(url, { signal: addrAbort.signal });
+    const data = await resp.json();
     renderAddr(data.features || []);
-  } catch {
+  } catch (err) {
+    if (err.name === 'AbortError') return;
     sugg.innerHTML = '<div class="sugg-loading">Fehler – bitte erneut versuchen</div>';
   }
 }
