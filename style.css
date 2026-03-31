@@ -963,6 +963,7 @@ button.btn-wa{border:none;font-family:'Karla',sans-serif;width:100%;}
   font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;
   padding:10px;border:none;cursor:pointer;
   font-family:'Karla',sans-serif;position:relative;
+  border-radius:var(--r-pill);
 }
 .mob-cart-badge{
   background:var(--white);color:var(--orange);
